@@ -1,0 +1,1 @@
+print(16*9*5*7*11*13*17*19) #multiply all primes below 20 * 16 and 9 since they are the largest product of 2 and 3 under 20
