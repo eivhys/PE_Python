@@ -103,5 +103,39 @@ def isPandigital(n):
     s = len(n)
     return len(n)==s and not '1234567890'[:s].strip(n)
 
+def isPandigitalWLen(n, s): 
+    n = str(n)
+    return len(n)==s and not '1234567890'[:s].strip(n)
+
 def triangle(n):
     return (n*(n+1))/2
+
+def pentagonal(n):
+    return n*(3*n-1)/2
+
+def hexagonal(n):
+    return n*(2*n-1)
+
+def isPentagonal(n):
+    p = 0
+    c = 0
+    while p < n:
+        p = pentagonal(c)
+        c += 1
+    return p == n
+
+def isTriangle(n):
+    p = 0
+    c = 0
+    while p < n:
+        p = triangle(c)
+        c += 1
+    return p == n
+
+def isHexagonal(n):
+    p = 0
+    c = 0
+    while p < n:
+        p = hexagonal(c)
+        c += 1
+    return p == n
