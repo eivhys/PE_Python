@@ -1,21 +1,15 @@
 import lib
 
-def isPentagonal(n):
-	p = 0
-	c = 0
-	while p < n:
-		p = lib.pentagonal(c)
-		c += 1
-	return p == n
-pk = 0
-found = False
-while not found:
-	for pj in xrange(1,pk):
-		p1 = lib.pentagonal(pk)
-		p2 = lib.pentagonal(pj)
-		pAdd = p1 + p2
-		pDiff = p1 - p2
-		if isPentagonal(pAdd) and isPentagonal(pDiff):
-			print p1 - p2
-			found = True
-	pk += 1
+searching = True
+i = 1
+
+while (searching):
+    i = i + 1
+    n = i * (3 * i - 1) / 2
+    for j in range(i-1, 0, -1):
+        m = j * (3 * j - 1) / 2
+        if lib.isPentagonal(n - m) and lib.isPentagonal(m + n):
+            result = n-m
+            searching = False
+            print(result)
+            break

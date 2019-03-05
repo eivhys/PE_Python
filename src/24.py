@@ -6,5 +6,5 @@ c = 0
 for p in itertools.permutations(a, k):
     c += 1
     if c == 1000000:
-    	print "".join(p),
-    	break
+        print("".join(p),)
+        break

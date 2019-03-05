@@ -22,16 +22,16 @@ p = """73167176531330624919225119674426574742355349194934
 71636269561882670428252483600823257530420752963450""".replace("\n", "")
 
 nums = []
-for x in xrange(0,len(p)):
-	nums.append(int(p[x]))	
+for x in xrange(0, len(p)):
+    nums.append(int(p[x]))
 
 length = 13
 answer = 0
-for x in xrange(0,len(nums) - length):
-	max = 1
-	for y in xrange(0,length):
-		max = max * nums[x + y]
-	if max > answer:
-		answer = max
+for x in range(0, len(nums) - length):
+    max = 1
+    for y in range(0, length):
+        max = max * nums[x + y]
+    if max > answer:
+        answer = max
 
 print(answer)

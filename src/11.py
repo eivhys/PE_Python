@@ -25,33 +25,36 @@ ps = p.split("\n")
 
 nums = []
 
-for x in xrange(0,len(ps)):
-	line = []
-	for y in xrange(0,len(ps[x].split(" "))):
-		line.append(int(ps[x].split(" ")[y]))
-	nums.append(line)
+for x in range(0, len(ps)):
+    line = []
+    for y in range(0, len(ps[x].split(" "))):
+        line.append(int(ps[x].split(" ")[y]))
+    nums.append(line)
 
 adjN = 4
 
+
 def diagonal(n):
-	max = 0
-	for x in xrange(0, len(n) - adjN):
-		for y in xrange(0, len(n[x]) - adjN):
-			m = n[x][y] * n[x + 1][y + 1] * n[x + 2][y + 2] * n[x + 3][y + 3]
-			if m > max:
-				max = m
-	return max
+    max = 0
+    for x in range(0, len(n) - adjN):
+        for y in range(0, len(n[x]) - adjN):
+            m = n[x][y] * n[x + 1][y + 1] * n[x + 2][y + 2] * n[x + 3][y + 3]
+            if m > max:
+                max = m
+    return max
+
 
 def horizontal(n):
-	max = 0
-	for x in xrange(0, len(n) - adjN):
-		for y in xrange(0, len(n[x])):
-			m = n[x][y] * n[x + 1][y] * n[x + 2][y] * n[x + 3][y]
-			if m > max:
-				max = m
-	return max
+    max = 0
+    for x in range(0, len(n) - adjN):
+        for y in range(0, len(n[x])):
+            m = n[x][y] * n[x + 1][y] * n[x + 2][y] * n[x + 3][y]
+            if m > max:
+                max = m
+    return max
+
 
 a = lib.max(diagonal(nums), horizontal(nums))
 a = lib.max(a, diagonal(lib.rotate90(nums)))
 a = lib.max(a, horizontal(lib.rotate90(nums)))
-print a
+print(a)

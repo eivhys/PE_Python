@@ -5,7 +5,7 @@ days = {
 	3:"Thursday",
 	4:"Friday",
 	5:"Saturday",
-6:"Sunday"
+	6:"Sunday"
 }
 
 def monthCalendar(year):
@@ -69,4 +69,4 @@ while year < 2001:
 	#print daycount + 1, days[day], months[month], year
 	day = day + 1
 	daycount = daycount + 1
-print sundayCounter
+print(sundayCounter)

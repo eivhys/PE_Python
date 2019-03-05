@@ -101,7 +101,7 @@ p = """37107287533902102798797998220837590246510135740250
 
 ps = p.split("\n")
 sum = 0
-for x in xrange(0, len(ps)):
-	sum = sum + int(ps[x])
+for x in range(0, len(ps)):
+    sum = sum + int(ps[x])
 
-print str(sum)[:10]
+print(str(sum)[:10])
